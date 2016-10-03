@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	
+	<meta charset = "UTF-8">
+	<title>Level Up</title>
+	
+	<link rel="stylesheet" href="styles/main.css">
+	<link rel="stylesheet" href="styles/fontfaces.css" />
+	
+	<script src="scripts/modernizr.js"></script>
+	<script src="scripts/loader.js"></script>
+</head>
+<body>
+	<div id="game">
+		<div class= "screen" id="splash-screen">
+			<h1 class="logo">Level<br/>Up</h1>
+			<a href="mainmenu.html" 
+                   style= "text-decoration: none" class= "playgame">
+				<font color= "#FADA24"><font size= "6">Click to continue </font>
+				 
+				</a>
+			
+			
+			
+		</div>
+		<div style="background-image:url(Circuit_Board.png);width:1900px;height:700px;">
+		</div>
+		<div class= "screen" id="main-menu"></div>
+		<div class= "screen" id="game-screen"></div>
+		<div class= "screen" id="how-to"></div>
+	</div>
+</body>
+</html>

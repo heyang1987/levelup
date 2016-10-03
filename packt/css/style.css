@@ -1,0 +1,98 @@
+body > header {
+ background: #000;
+}
+body > header h1 {
+ margin: 0;
+ padding: 10px 20px;
+ color: #fff;
+ border-bottom: 5px solid #c00;
+}
+
+nav {
+ float: left;
+ padding: 20px 20px 40px;
+ margin: 20px 10px 10px 20px;
+ background: #ddd;
+ border-bottom: 2px solid #888;
+}
+nav h2 {
+ margin: 0 0 15px;
+ color: #a00;
+ text-shadow: 1px 1px 1px #fff;
+ padding: 0 0 5px;
+ border-bottom: 1px dashed #eee;
+}
+nav ul {
+ padding: 0;
+ margin: 0;
+ list-style: none;
+}
+
+nav a {
+ text-decoration: none;
+ display: block;
+ padding: 10px 0;
+ margin: 2px 0;
+ border-bottom: 1px solid #aaa;
+ color: #333;
+}
+nav a:hover {
+ border-bottom: 1px solid #c00;
+ color: #c00;
+}
+section {
+ float: left;
+ padding: 20px 10px 0;
+}
+section > article {
+ background: #fff;
+ border-bottom: 2px solid #aaa;
+ margin: 0 0 20px;
+ padding: 0;
+ width: 500px;
+}
+section article figure {
+ margin: 0;
+ position: relative;
+}
+section article figure:hover figcaption {
+ display: block;
+}
+section article figure img {
+ width: 500px;
+ height: 200px;
+}
+section article figcaption {
+ display: none;
+ background: rgba(25, 25, 25, 0.75);
+ position: absolute;
+ bottom: 5px;
+ width: 100%;
+}
+section article figcaption p {
+ margin: 0;
+ padding: 10px;
+ color: #fff;
+}
+section article article p,
+section article article address,
+section article article time {
+ color: #555;
+ line-height: 1.5em;
+ margin: 1em 0;
+ display: block;
+}
+section article article details {
+ color: #555;
+ border-bottom: 1px dashed #ddd;
+ padding-bottom: 20px;
+}
+footer {
+ clear: both;
+ background: #333;
+}
+footer p {
+ margin: 0;
+ padding: 10px 20px;
+ color: #aaa;
+}

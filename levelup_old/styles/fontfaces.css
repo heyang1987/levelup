@@ -1,0 +1,31 @@
+@font-face {
+	font-family: "Pacifico";
+	font-weight: normal;
+	font-style: normal;
+	src: url("../fonts/Pacifico.woff") format("woff"),
+		 url("../fonts/Pacifico.tff") format("truetype");
+
+}
+
+@font-face {
+	font-family: "Pacifico";
+	font-weight: normal;
+	font-style: normal;
+	src: url("../fonts/Pacifico.woff") format("woff"),
+		 url("../fonts/Pacifico.tff") format("truetype");
+}
+
+@font-face {
+	font-family: "Lemondrop";
+	font-weight: normal;
+	font-style: normal;
+	src: url("../fonts/Lemondrop.woff") format("woff"),
+		 url("../fonts/Lemondrop.tff") format("truetype");
+}
+
+@font-face {
+	font-family: "cicle";
+	font-weight: normal;
+	font-style: normal;
+	src: url("../fonts/cicle.ttf") format("woff");
+}

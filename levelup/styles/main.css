@@ -1,0 +1,252 @@
+body {
+	margin: 0;
+}
+
+#game {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 1300px;
+	height: 0px;
+	font-family: Pacifico;
+	color: rgb(50,33,134);
+	
+}
+
+#game .screen {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: url('Circuit_Board.png');
+	z-index: 10;
+}
+
+#game .screen.active {
+	display: block;
+	
+}
+
+
+#splash-screen {
+	text-align : center;
+	padding-top : 100px;
+	width: 100%;
+	height: 100%;
+	
+}
+
+#splash-screen .continue {
+	cursor : pointer;
+	font-size : 0.75em;
+	display: none;
+}
+
+.playgame {
+	color : #FF8500;
+	font-family: cicle;
+	font-weight: bold;
+	font-size: 25;
+	text-decoration: none;
+	text-shadow: #000 3px 3px, #000 2px 2px, #000 3px 3px;
+	margin: 0 auto;
+	 -moz-transition: all 0.3s ease-out; /* FF3.7+ */
+       -o-transition: all 0.3s ease-out; /* Opera 10.5 */
+  -webkit-transition: all 0.3s ease-out; /* Saf3.2+, Chrome */
+          transition: all 0.3s ease-out;
+}
+
+.playgame:hover{
+	color: #FF8500;
+	text-shadow: #58E 1px 1px, #58E 2px 2px, #58E 3px 3px, #58E 4px 4px, #58E 5px 5px, #58E 6px 6px;
+	left: -6px;
+	top: -6px;
+}
+.container {
+  margin: 50px auto;
+  width: 640px;
+  text-align: center;
+}
+.container .button {
+  margin: 0 10px 25px;
+}
+
+.button {
+  margin: 0 0 5px;
+  padding: 2px 13px 6px 13px;
+  height: 28px;
+  line-height: 28px;
+  font-weight: bold;
+  color: #555555;
+  text-decoration: none;
+  background: rgb(0,0,0,0);
+  border-width: 1px 1px 0;
+  border-style: solid;
+  border-color: #cecece #bababa #a8a8a8;
+  border-radius: 3px 3px 2px 2px;
+  outline: 0;
+  display: inline-block;
+  vertical-align: baseline;
+  *vertical-align: auto;
+
+}
+.button:hover, .button:active {
+  background: #dfdfdf;
+  border-top-color: #c9c9c9;
+}
+
+.button.menu {
+	background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    font-size: 20px;
+    color: rgba(74,205,10,1);
+}
+
+.button.instruction {
+	background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    font-size: 20px;
+    color: rgb(86,181,255);
+}
+
+.button.yellow {
+  color: #7e4f27;
+  text-shadow: 0 1px #f2e294;
+  background: #f6ba49;
+  border-color: #efb443 #d9a238 #a57825;
+  background-image: -webkit-linear-gradient(top, #ffdd67, #f6ba49 70%, #f4b03e);
+  background-image: -moz-linear-gradient(top, #ffdd67, #f6ba49 70%, #f4b03e);
+  background-image: -o-linear-gradient(top, #ffdd67, #f6ba49 70%, #f4b03e);
+  background-image: linear-gradient(to bottom, #ffdd67, #f6ba49 70%, #f4b03e);
+  -webkit-box-shadow: inset 0 1px #ffeca6, inset 0 0 0 1px #e5c96d, 0 1px #a57825, 0 3px #c08a28, 0 4px #a57825, 0 5px 2px rgba(0, 0, 0, 0.4);
+  box-shadow: inset 0 1px #ffeca6, inset 0 0 0 1px #e5c96d, 0 1px #a57825, 0 3px #c08a28, 0 4px #a57825, 0 5px 2px rgba(0, 0, 0, 0.4);
+}
+.button.yellow:hover, .button.yellow:active {
+  background: #f6ba49;
+  border-top-color: #e5ab3d;
+}
+
+
+.lt-ie9 .button {
+  border-width: 1px;
+  padding: 0 12px;
+}
+
+.mytext{
+	background-image: -webkit-linear-gradient(top, #ffdd67, #f6ba49 70%, #f4b03e);
+	  background-image: -moz-linear-gradient(top, #ffdd67, #f6ba49 70%, #f4b03e);
+	  background-image: -o-linear-gradient(top, #ffdd67, #f6ba49 70%, #f4b03e);
+	  background-image: linear-gradient(to bottom, #ffdd67, #f6ba49 70%, #f4b03e);
+	  -webkit-box-shadow: inset 0 1px #ffeca6, inset 0 0 0 1px #e5c96d, 0 1px #a57825, 0 3px #c08a28, 0 4px #a57825, 0 5px 2px rgba(0, 0, 0, 0.4);
+	  box-shadow: inset 0 1px #ffeca6, inset 0 0 0 1px #e5c96d, 0 1px #a57825, 0 3px #c08a28, 0 4px #a57825, 0 5px 2px rgba(0, 0, 0, 0.4);
+	  
+	}
+	
+.headers{
+	font-family : Lemondrop;
+	font-size: 10px;
+	color: #0d4d59;
+	}
+	
+.logo {
+	font-family : Pacifico;
+	font-size : 120px;
+	line-height: 120px;
+	margin: 20;
+	text-align : center;
+	text-shadow: #000 3px 3px, #000 2px 2px, #000 3px 3px;
+	color : rgb(255,243,122);
+	position: relative;	
+}
+
+
+
+.main {
+	font-family : tahoma;
+	font-size : 90px;
+	line-height: 90px;
+	margin: 20;
+	text-align : center;
+	text-shadow: #000 3px 3px, #000 2px 2px, #000 3px 3px;
+	color : #FF8500;
+	position: relative;	 
+}
+
+.hexagontext {
+	border-style: none;
+	border-color: Transparent; 
+	overflow: auto;
+	text-align: center;
+	
+}
+
+
+.button2 {
+		position: absolute;
+		-webkit-border-radius: 60px;
+		-moz-border-radius: 60px;
+		border-radius: 60px;
+		width: 80px;
+		height: 20px;
+		padding-top: 2px;
+		padding-bottom:10px;
+		background: rgb(59, 170, 205);
+		text-align:center;
+		vertical-align:text-top;
+		color: white;
+		font-family: American Typewriter;
+		-webkit-box-shadow: inset 0 1px #ffeca6, inset 0 0 0 1px #e5c96d, 0 1px #a57825, 0 1px #c08a28, 0 1px #a57825, 0 1px 2px rgba(0, 0, 0, 0.4);
+		box-shadow: inset 0 1px #fdfdfd, inset 0 0 0 1px #eaeaea, 0 1px #a8a8a8, 0 1px #bbbbbb, 0 1px #a8a8a8, 0 1px 2px rgba(0, 0, 0, 0.25);
+		
+}
+
+.codetextarea {
+	font-family : Cambria;
+	font-size: 15px;
+}
+
+#how-to-text {
+	font-family : Pacifico;
+	font-size : 50px;
+	text-shadow: #000 3px 3px, #000 2px 2px, #000 3px 3px;
+	color : rgb(255,243,122); 
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+
+#how-to {
+	top: 0;
+	left: 0;
+	overflow-x:hidden;
+	width: 100%;
+	height: 100%;
+	min-width: 100%;
+  	min-height: 100%;
+	display:url(Circuit_Board.png); 
+}
+
+#how-to-background {
+	
+	top: 20%;
+	left: 4%;
+  	
+	
+	margin-right: 50px;
+	margin-bottom: 20px;
+	position: absolute;
+	display:block;
+	overflow-x:hidden;
+	width: 90%;
+	height:100%;
+	
+  	}
+.RegUnclickable{ pointer-events: none; }
+.RegClickable{ pointer-events: auto; }

@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset = "UTF-8">
+	<title>Level Up</title>
+	<style>
+		html, body{
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+	<link rel="stylesheet" href="styles/main.css">
+	<link rel="stylesheet" href="styles/fontfaces.css"/>
+	<link rel="stylesheet" href="styles/sparks.css"/>
+	<link rel="stylesheet" href="styles/reg.css"/>
+	<script src="scripts/lexer.js"></script>
+	<script src="scripts/parser.js"></script>
+	<script src="scripts/evaluator.js"></script>
+	<script src="scripts/processing.js"></script>
+	<script src="scripts/modernizr.js"></script>
+	<script src="scripts/loader.js"></script>
+	<script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
+	<script src="scripts/program.js"></script>
+	<script src="scripts/Animations.js"></script>
+	<script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+</head>
+
+<body>
+<div id="title">
+	<h1>Level 1</h1>
+<style>
+	#title {
+		position: absolute;
+		left: 680px;
+		top: 0px;
+		font-family : tahoma;
+		font-size : 40px;
+		line-height: 90px;
+		margin: 0;
+		text-align : center;
+		text-shadow: #000 3px 3px, #000 2px 2px, #000 3px 3px;
+		color : #FF8500;	
+	}	
+</style>
+</div>
+<canvas id="mycanvas"></canvas>
+
+<!--
+<spark1 id="spark1"></spark1> 
+<spark2 id="spark2"></spark2>
+<spark3 id="spark3"></spark3>
+<spark4 id="spark4"></spark4>
+<spark5 id="spark5"></spark5>
+<spark6 id="spark6"></spark6>
+<spark7 id="spark7"></spark7>
+<spark8 id="spark8"></spark8>
+<spark9 id="spark9"></spark9>
+<spark10 id="spark10"></spark10>
+<spark11 id="spark11"></spark11>
+<spark12 id="spark12"></spark12>
+-->
+
+<div id="sparkA" style="position: absolute; left: 900px; top: 445px; display: none"><img src="styles/spark.gif"/></div>
+<div id="sparkB" style="position: absolute; left: 900px; top: 445px; display: none"><img src="styles/spark.gif"/></div>
+<div id="sparkC" style="position: absolute; left: 900px; top: 445px; display: none"><img src="styles/spark.gif"/></div>
+<div id="sparkD" style="position: absolute; left: 900px; top: 445px; display: none"><img src="styles/spark.gif"/></div>
+
+<!-- This codes for toolbar at the top of the page -->
+<div id="rectangle" style="float:right";>
+&nbsp;&nbsp;
+<a href="index.html" class="button menu"<button>Menu</button></a>
+<a href="#" class="button menu"<button>Levels</button></a>
+<a href="JavaScript:newPopup('how-to.html');" class="button menu">How-To</a>
+<a href="index.html" class="button menu">Exit</a><br>
+<style>
+	#rectangle {
+		width: 410px;
+		height: 40px;
+		background: rgba(180, 255, 0, 0.88);
+		border-radius: 0px 0px 12px 0px; 
+		-moz-border-radius: 0px 0px 12px 0px; 
+		-webkit-border-radius: 0px 0px 12px 0px;
+		border: 2px ridge #5ddcdd;
+	}	
+</style>
+</div>
+
+
+<div class="shape">
+
+
+<!--Code for the wire graphic-->	
+<!--
+<div style="position: absolute; left: -75px; top: 0px;">
+	<img width="1575" height="640" src="graphics/topwires.png">
+	</div>
+-->
+
+<!--Code for the polygons-->
+<div id="A" class="RegUnclickable" style="position: absolute; left: 628px; top: 200px;">
+	<img  src="graphics/lvl1_A_glow.png" onClick="add_A_To_Code()">
+	<div style="position: absolute; left:10px; top: 50px;">
+	<textarea readonly name = "a" id="registerA" placeholder="11" onfocus="add_A_To_Code()"></textarea>
+	<style>
+		#registerA {
+			width: 100px;
+			height: 30px; 
+			resize: none;
+			border: none;
+			text-align: center;
+			background: white;  
+			outline: none;
+			background: rgba(0, 0, 0, 0);
+			font-size: 18px;
+			font-weight: bold;
+			color: rgb(255,162,86);
+		}
+	</style>
+	</div>
+</div>
+		
+<div id="B" class="RegUnclickable" style="position: absolute; left: 787px; top: 200px;">
+	<img  src="graphics/lvl1_B_glow.png" onClick="add_B_To_Code()">
+	<div style="position: absolute; left:10px; top: 50px;">
+	<textarea readonly name = "b" id="registerB" placeholder="22" onfocus="add_B_To_Code()"></textarea>
+	<style>
+		#registerB {
+			width: 100px;
+			height: 30px; 
+			resize: none;
+			border: none;
+			text-align: center;
+			background: white;  
+			outline: none;
+			background: rgba(0, 0, 0, 0);
+			font-size: 18px;
+			font-weight: bold;
+			color: rgb(255,162,86);
+		}
+	</style>
+	</div>
+</div>
+			
+<div id="C" class="RegUnclickable"  style="position: absolute; left: 941px; top: 200px;">
+	<img  src="graphics/lvl1_C_glow.png" onClick="add_C_To_Code()">
+	<div style="position: absolute; left:10px; top: 50px;">
+	<textarea readonly name = "c" id="registerC" placeholder="33" onfocus="add_C_To_Code()"></textarea>
+	<style>
+		#registerC {
+			width: 100px;
+			height: 30px; 
+			resize: none;
+			border: none;
+			text-align: center;
+			background: white;  
+			outline: none;
+			background: rgba(0, 0, 0, 0);
+			font-size: 18px;
+			font-weight: bold;
+			color: rgb(255,162,86);
+		}
+	</style>
+	</div>
+</div>
+				
+<div id="D" class="RegUnclickable" style="position: absolute; left: 1098px; top: 200px;">
+	<img  src="graphics/lvl1_D_glow.png" onClick="add_D_To_Code()">
+	<div style="position: absolute; left:10px; top: 50px;">
+	<textarea readonly name = "d" id="registerD" placeholder="44" onfocus="add_D_To_Code()"></textarea>
+	<style>
+		#registerD {
+			width: 100px;
+			height: 30px; 
+			resize: none;
+			border: none;
+			text-align: center;
+			background: white;  
+			outline: none;
+			background: rgba(0, 0, 0, 0);
+			font-size: 18px;
+			font-weight: bold;
+			color: rgb(255,162,86);
+		}
+	</style>
+	</div>
+</div>
+		
+<!-- This codes for the instruction status box on the top left side of the page -->
+<div id="statusBar" style="position: absolute; left: 45px; top: 150px; padding: 10px;">
+<textarea readonly id="status"></textarea>
+<style>
+	#status {
+		width: 410px; 
+		height: 50px;
+		max-height: 275px; 
+		resize:none;
+		background: rgba(0, 0, 0, 0.5);	
+		border-radius: 5px 5px 5px 5px;  
+		border: 4px groove rgba(255,176,10,0.5);
+		outline: none;
+		font-size: 22px;
+		color: rgb(255,0,0);
+	}
+</style>
+</div>	
+		
+<!-- This codes for the instruction buttons box on the top left side of the page -->
+<div id="rectangle2" style="position: absolute; left: 55px; top: 250px; padding: 10px;">
+<style>
+	#rectangle2 {
+		width: 395px;
+		height: 170px;
+		background: rgba(0, 0, 0, 0);
+		border-radius: 5px 5px 5px 5px;  
+		border: 4px groove rgba(84,176,246,0.5);
+		outline: none;
+		font-size: 22px;
+		color: rgb(86,181,255);
+	}	
+</style>
+&nbsp;&nbsp;&nbsp;<button id="inputButton", class= "button instruction", onclick="inputButtonClicked()">input</button></br>
+&nbsp;&nbsp;&nbsp;<button id="outputButton", class= "button instruction", onclick="outputButtonClicked()">output</button></br>
+&nbsp;&nbsp;&nbsp;<button id="assignmentButton", class= "button instruction", onclick="assignmentButtonClicked()">assignment</button></br>
+&nbsp;&nbsp;&nbsp;<button id="ifButton", class= "button instruction", onclick="ifButtonClicked()">if</button></br>
+&nbsp;&nbsp;&nbsp;<button id="whileButton", class= "button instruction" onclick="whileButtonClicked()">while</button></br>
+</div>
+
+<!-- This codes for the code textbox on the bottom left side of the page -->
+<div id="codeDiv" style="position: absolute; left: 45px; top: 450px; padding: 10px;">
+<textarea id="code">
+input A
+output A
+</textarea>
+<style>
+	#code {
+		width: 410px; 
+		height: 275px;
+		max-height: 275px; 
+		resize:none;
+		background: rgba(0, 0, 0, 0.5);	
+		border-radius: 5px 5px 5px 5px;  
+		border: 4px groove rgba(84,176,246,0.5);
+		outline: none;
+		font-size: 22px;
+		color: rgb(86,181,255);
+	}
+</style>
+</div>
+
+<div style="position: absolute; left: 45px; top: 750px; padding: 10px;">
+<button id="run" class= "button yellow">Run</button>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button id="clear" class= "button yellow">Clear</button>
+<script>
+	if (!Object.create) {
+		Object.create = function (o) {
+			function F() { }
+			F.prototype = o;
+			return new F();
+		};
+	}
+
+/*	var compile = function (input) {
+		try {
+			var tokens = lex(input);
+			var parseTree = parse(tokens);
+			var output = evaluate(parseTree);
+			return output;
+		} catch (e) {
+			return e;
+		}
+	}; */
+	
+	document.getElementById("clear").onclick = function () {
+		document.getElementById("code").value="";
+	}
+	
+	document.getElementById("run").onclick = function () {
+		var mylex = function (input) {
+			var isOperator = function (c) { return /[+\-*\/\^%=(),]/.test(c); },
+				isDigit = function (c) { return /[0-9]/.test(c); },
+				isWhiteSpace = function (c) { return /\s/.test(c); },
+				isIdentifier = function (c) { return typeof c === "string" && !isOperator(c) && !isDigit(c) && !isWhiteSpace(c); };
+
+			var tokens = [], c, i = 0;
+			var advance = function () { return c = input[++i]; };
+			var addToken = function (type, value) {
+				tokens.push({
+					type: type,
+					value: value
+				});
+			};
+			while (i < input.length) {
+				c = input[i];
+				if (isWhiteSpace(c)) advance();
+				else if (isOperator(c)) {
+					addToken(c);
+					advance();
+				}
+				else if (isDigit(c)) {
+					var num = c;
+					while (isDigit(advance())) num += c;
+					if (c === ".") {
+						do num += c; while (isDigit(advance()));
+					}
+					num = parseFloat(num);
+					if (!isFinite(num)) throw "Number is too large or too small for a 64-bit double.";
+					addToken("number", num);
+				}
+				else if (isIdentifier(c)) {
+					var idn = c;
+					while (isIdentifier(advance())) {
+						idn += c;
+					}
+					if (idn == "input"){
+						inputFlag = true;
+					}
+					else if (idn == "A" && inputFlag == true){
+						//var valueA = prompt("Please input a value for A:", "a = ");
+						waitInputA();
+						//alert(idn);
+						addToken("identifier", idn);
+						inputFlag = false;
+					}
+					else if (idn == "output"){
+						//alert("input detected");
+					}
+					else {
+						addToken("identifier", idn);
+					}
+					//addToken("identifier", idn);
+				}
+				else throw "Unrecognized token.";
+			}
+
+			addToken("(end)");
+			return tokens;
+		};
+
+		var input = document.getElementById("code").value;
+		//var input2 = input;		
+		var myTokens = lex(input);
+		var parseTree = parse(myTokens);
+		var output = evaluate(parseTree);
+		var inputDiv = document.getElementById("inputArea");
+		var outputDiv = document.getElementById("outputArea");
+		if (outputDiv.style.display !== "block") {
+			outputDiv.style.display = "block";
+		}
+		if (inputDiv.style.display !== "none") {
+			inputDiv.style.display = "none";
+		}
+		document.getElementById("output").innerHTML = output;
+	};
+</script>
+<!--
+<input type="button" value="Run" style="position:absolute; top: 20px; left: 460px; padding-bottom: 6px;" class= "button yellow" onClick="splitCode('code')">
+<input type="button" value= "Stop" style= "position:absolute; top: 70px; left: 458px; padding-bottom: 6px; " class= "button yellow" onClick="performExpression('code')">
+<input type="button" value= "Clear" style= "position:absolute; top: 120px; left: 456px; padding-bottom: 6px; " class= "button yellow" onClick="code.value = ''; output.value= '' ">
+
+<input type="button" class="button2" value="cin >>" style="position:absolute; top: -25px; left: 150px;" onClick="fillCodeCIN('code')">
+<input type="button" class="button2" value="cout <<" style="position:absolute; top: -25px; left: 250px;"  onClick="fillCodeCOUT('code')">
+<input type="button" class="button2" value="if" style="position:absolute; top: -25px; left: 350px;"  onClick="fillCodeIF('code')">
+<input type="button" class="button2" value="while" style="position:absolute; top: -25px; left: 450px;"  onClick="fillCodeWHILE('code')">
+-->
+</div>
+
+<!-- This codes for the background of the Register input textbox on the left side of the page -->
+<div id="inputArea"style= "position: absolute; left: 670px; top: 450px; padding: 10px; display: auto" class="headers">
+<font color="white" face="cicle" font size="6">
+INPUT:</font><br>
+<!-- 
+<form id="input" name="myinput" method="get" action="" onKeyPress="return submitenter(this,event)">	
+
+<input type="text" name="inputbox" value="" 
+	style="width: 410px; height: 30px;
+		resize:none; background: rgba(0, 0, 0, 0.5); 
+		font-size:28px; color: rgb(59, 150, 225);">&nbsp;&nbsp;&nbsp;
+<input type="button" id="enter" value="Enter" class= "button yellow" onClick="readInput(this.form)"> -->
+<form action="javascript:alert( 'success!' );">
+  <div>
+    <input type="text" style="width: 410px; height: 30px;
+		resize:none; background: rgba(0, 0, 0, 0.5); 
+		font-size:28px; color: rgb(59, 150, 225);">
+	&nbsp;&nbsp;&nbsp;
+    <input type="submit" value="Enter" class= "button yellow">
+  </div>
+</form>
+<span style="color: red;"></span>
+<script>
+$( "form" ).submit(function( event ) {
+	if ( $( "input:first" ).val() === "A" ) {
+		document.getElementById("sparkA").style.display = "block";
+		$(document).ready(function(){
+			$("#sparkA").animate({top: '380px'},"slow");
+			$("#sparkA").animate({left: '646px'},1500);
+			$("#sparkA").animate({top: '270px'},1500);
+		});
+		return;
+	}
+	else if ( $( "input:first" ).val() === "B" ) {
+		document.getElementById("sparkB").style.display = "block";
+		$(document).ready(function(){
+			$("#sparkB").animate({top: '380px'},"slow");
+			$("#sparkB").animate({left: '801px'},1500);
+			$("#sparkB").animate({top: '270px'},1500);
+		});
+		return;
+	}
+	else if ( $( "input:first" ).val() === "C" ) {
+		document.getElementById("sparkC").style.display = "block";
+		$(document).ready(function(){
+			$("#sparkC").animate({top: '380px'},"slow");
+			$("#sparkC").animate({left: '957px'},1500);
+			$("#sparkC").animate({top: '270px'},1500);
+		});
+		return;
+	}
+	else if ( $( "input:first" ).val() === "D" ) {
+		document.getElementById("sparkD").style.display = "block";
+		$(document).ready(function(){
+			$("#sparkD").animate({top: '380px'},"slow");
+			$("#sparkD").animate({left: '1113px'},1500);
+			$("#sparkD").animate({top: '270px'},1500);
+		});
+		return;
+	}
+	$( "span" ).text( "Not valid!" ).show().fadeOut( 1000 );
+	event.preventDefault();
+});
+</script>
+</form>
+</div>
+
+<!-- This codes for the OUTPUT textbox on the bottom right side of the page -->
+<div id="outputArea" style="position: absolute; left: 670px; top: 450px; padding: 10px; display: none">
+<textarea readonly id="output"></textarea>
+<style>
+	#output {
+		width: 510px; 
+		height: 275px;
+		max-height: 275px; 
+		resize:none;
+		background: rgba(0, 0, 0, 0.5);	
+		border-radius: 5px 5px 5px 5px;  
+		border: 4px groove rgba(169, 77, 248, 0.6);
+		outline: none;
+		font-size: 22px;
+		color: rgb(169, 77, 248);
+	}
+</style>
+</div>
+
+
+<!--Popup window code-->
+<script type="text/javascript">
+function newPopup(url) {
+	popupWindow = window.open(
+		url,'popUpWindow','height=500,width=700,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=no,directories=no,status=yes')
+}
+/* background switching, effect not good, screen flashing
+var images = ['backgrounds/background4.png', 'backgrounds/background.png', 'backgrounds/background2.png'];
+var i = 0;
+
+setInterval(function(){
+    $('body').css('background-image', function() {
+        if (i >= images.length) {
+            i=0;
+        }
+        return 'url(' + images[i++] + ')'; 
+    });
+}, 1000);
+*/
+</script>
+
+<!-- background -->
+<body style = "background: url(backgrounds/background.gif);"> 
+</style>
+
+</body>
+</html>

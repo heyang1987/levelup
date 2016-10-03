@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset = "UTF-8">
+	<title>Level Up</title>
+	<style>
+		html, body{
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+	<link rel="stylesheet" href="styles/main.css">
+	<link rel="stylesheet" href="styles/fontfaces.css"/>
+	<link rel="stylesheet" href="styles/sparks.css"/>
+	<link rel="stylesheet" href="styles/canvas.css"/>
+	<script src="scripts/modernizr.js"></script>
+	<script src="scripts/loader.js"></script>
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<script src="scripts/program.js"></script>
+	<script src="scripts/Animations.js"></script>
+	<script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
+</head>
+
+<body>
+<canvas id="mycanvas"></canvas>
+<spark1 id="spark1"></spark1> 
+<spark2 id="spark2"></spark2>
+<spark3 id="spark3"></spark3>
+<spark4 id="spark4"></spark4>
+<spark5 id="spark5"></spark5>
+<spark6 id="spark6"></spark6>
+<spark7 id="spark7"></spark7>
+<spark8 id="spark8"></spark8>
+<spark9 id="spark9"></spark9>
+<spark10 id="spark10"></spark10>
+<spark11 id="spark11"></spark11>
+<spark12 id="spark12"></spark12>
+
+<!-- This codes for the rect background under toolbar-->
+
+<div class="shape">
+<div id="rectangle"></div>
+
+			
+			<style>
+	#rectangle {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 410px;
+	height: 50px;
+	background: rgb(59, 170, 205);
+	border-radius: 0px 0px 12px 0px; 
+	-moz-border-radius: 0px 0px 12px 0px; 
+	-webkit-border-radius: 0px 0px 12px 0px;
+	border: 2px ridge #5ddcdd;
+}	
+			</style>
+	</div>
+
+<!--Code for the wire graphic-->	
+
+<!--
+<div style="position: absolute; left: -75px; top: 0px;">
+	<img width="1575" height="640" src="graphics/topwires.png">
+	</div>
+-->
+
+<div style="position: absolute; left: 628px; top: 170px;">
+	<img class="polygon" width="120" height="130" src="graphics/polygon.png" onmouseover=this.src='graphics/polygonglow.png' onmouseout=this.src='graphics/polygon.png' onClick="fillInputA(myinput)">
+	<div style="position: absolute; left:11px; top: 50px;">
+	<textarea name = "a" id="registerA" readonly style="width: 90px; height: 20px; resize:none; background: white;  outline:none;" class="hexagontext" onClick="fillInputA(myinput)"></textarea>
+	</div>
+	</div>
+		
+<div style="position: absolute; left: 787px; top: 170px;">
+	<img class="polygon" width="120" height="130" src="graphics/polygon.png" onmouseover=this.src='graphics/polygonglow.png' onmouseout=this.src='graphics/polygon.png' onClick="fillInputB(myinput)">
+	<div style="position: absolute; left:11px; top: 50px;">
+	<textarea name = "b" id="registerB" readonly style="width: 90px; height: 20px; resize:none; background: white;  outline:none;" class="hexagontext" onClick="fillInputB(myinput)"></textarea>
+	</div>
+	</div>
+			
+<div style="position: absolute; left: 941px; top: 170px;">
+	<img class="polygon" width="120" height="130" src="graphics/polygon.png" onmouseover=this.src='graphics/polygonglow.png' onmouseout=this.src='graphics/polygon.png' onClick="fillInputC(myinput)">
+	<div style="position: absolute; left:11px; top: 50px;">
+	<textarea name = "c" id="registerC" readonly style="width: 90px; height: 20px; resize:none; background: white; outline:none;" class="hexagontext" onClick="fillInputC(myinput)"></textarea>
+	</div>
+	</div>
+				
+<div style="position: absolute; left: 1098px; top: 170px;">
+	<img class="polygon" width="120" height="130" src="graphics/polygon.png" onmouseover=this.src='graphics/polygonglow.png' onmouseout=this.src='graphics/polygon.png' onClick="fillInputD(myinput)">
+	<div style="position: absolute; left:11px; top: 50px;">
+	<textarea name ="d" id="registerD" readonly style="width: 90px; height: 20px; resize:none; background: white;  outline:none;" class="hexagontext" onClick="fillInputD(myinput)"></textarea>
+	</div>
+	</div>
+
+<div style="position: absolute; left: 650px; top: 150px;">
+	<img src="graphics/registerA.png" width="20" height="20" onClick="fillInputA(myinput)">
+	</div>	
+	
+<div style="position: absolute; left: 810px; top: 150px;">
+		<img src="graphics/registerB.png" width="20" height="20" onClick="fillInputB(myinput)">
+		</div>	
+		
+<div style="position: absolute; left: 965px; top: 150px;">
+		<img src="graphics/registerC.png" width="20" height="20" onClick="fillInputC(myinput)">
+		</div>
+
+<div style="position: absolute; left: 1120px; top: 150px;">
+	<img src="graphics/registerD.png" width="20" height="20" onClick="fillInputD(myinput)">
+	</div>
+
+	
+	
+<!-- This codes for toolbar at the top of the page -->
+
+<section class="container">
+	<div style="position: absolute; left: 10px; top: 6px;">
+	    <a href="mainmenu.html" class="button yellow">Main Menu</a><br>
+	</div> 
+	<div style= "position: absolute; left: 130px; top: 6px;" class="button yellow" onClick="displayDropDown" >Levels<br>
+		</div>
+	<div style= "position: absolute; left: 207px; top: 6px;">
+		<a href="JavaScript:newPopup('how-to.html');" class="button yellow">How-To</a><br>
+		</div>
+		<div style="position: absolute; left: 305px; top: 6px;">
+		<a href="index.html" class="button yellow">Exit</a><br>
+	   </div>
+
+	  </section>
+
+		
+<div class="shape">
+	<div id="rectangle2"></div>
+	
+
+
+				<style>
+		#rectangle2 {
+		position: absolute;
+		top: 65px;
+		left: 14px;
+		width: 536px;
+		height: 335px;
+		background: rgb(250,232,192);
+		border-radius: 15px 15px 0px 0px; 
+		-moz-border-radius: 15px 15px 0px 0px; 
+		-webkit-border-radius: 15px 15px 0px 0px; 
+		border: 6px solid rgb(59, 170, 205);
+		
+	}	
+				</style>
+		</div>
+		
+<!-- This codes for the code textbox on the left side of the page -->
+<div style="position: absolute; left: 20px; top: 45px; padding: 12px;" class="headers">
+<h1>Code</h1>
+</div>
+<form name="formname" id="mycode" method="get" action="">
+
+<div style="position: absolute; left: 20px; top: 100px; padding: 10px; width:515px; height: 280px;" class="mytext">
+<textarea class="codetextarea" name="code" contenteditable="true" id="code" style="width: 430px; height: 270px; resize:none; background: white; color: black;" value = "Enter your code here" onfocus="if (this.value == this.defaultValue) this.value = '';">
+Enter your code here
+</textarea><br>
+<input type="button" value="Run" style="position:absolute; top: 20px; left: 460px; padding-bottom: 6px;" class= "button yellow" onClick="splitCode('code')">
+<input type="button" value= "Stop" style= "position:absolute; top: 70px; left: 458px; padding-bottom: 6px; " class= "button yellow" onClick="performExpression('code')">
+<input type="button" value= "Clear" style= "position:absolute; top: 120px; left: 456px; padding-bottom: 6px; " class= "button yellow" onClick="code.value = ''; output.value= '' ">
+
+<input type="button" class="button2" value="cin >>" style="position:absolute; top: -25px; left: 150px;" onClick="fillCodeCIN('code')">
+<input type="button" class="button2" value="cout <<" style="position:absolute; top: -25px; left: 250px;"  onClick="fillCodeCOUT('code')">
+<input type="button" class="button2" value="if" style="position:absolute; top: -25px; left: 350px;"  onClick="fillCodeIF('code')">
+<input type="button" class="button2" value="while" style="position:absolute; top: -25px; left: 450px;"  onClick="fillCodeWHILE('code')">
+
+
+</div>
+</form>
+<div class="shape">
+<div id="rectangle3"></div>
+
+
+			<style>
+	#rectangle3 {
+	position: absolute;
+	top: 416px;
+	left: 14px;
+	width: 536px;
+	height: 250px;
+	background: rgb(250,232,192);
+	border-radius: 15px 15px 0px 0px; 
+	-moz-border-radius: 15px 15px 0px 0px; 
+	-webkit-border-radius: 15px 15px 0px 0px; 
+	border: 6px solid rgb(59, 170, 205);
+}	
+			</style>
+	</div>
+	
+<!-- This codes for the input/output textbox on the left side of the page -->
+<div style= "position: absolute; left: 20px; top: 403px; padding: 10px;" class="headers">
+<h2>Input/Output</h2>
+</div>
+<form id="input" name="myinput" method="get" action="" onKeyPress="return submitenter(this,event)">	
+<div style="position: absolute; left: 20px; top: 450px; padding: 10px; width:515px; height: 30px;" class="mytext">
+<input type="text" name="inputbox" value="" style="width: 430px; height: 15px; resize:none; background: white;">
+<input type="button" id="enter" value="Submit" style="position:absolute; top: 3px; left: 452px;" class= "button yellow" onClick="readInput(this.form)">
+</div>
+<div style="position: absolute; left: 20px; top: 493px;">	
+<textarea id="output" readonly style="width: 530px; -moz-padding-start: 1px; -moz-padding-end: 1px; height: 175px; resize:none; background: white;"></textarea>
+</div>
+</form>
+
+<!--Popup window code-->
+<script type="text/javascript">
+function newPopup(url) {
+	popupWindow = window.open(
+		url,'popUpWindow','height=500,width=700,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=no,directories=no,status=yes')
+}
+
+ 
+</script>
+
+<!-- background 
+<body style = "background: url(Circuit_Board.png);"> -->
+</style>
+
+</body>
+	<script src="scripts/processing.js"></script>
+	<script type="text/processing" data-processing-target="mycanvas">
+		PImage bg; 
+		void setup()
+		{
+			size(1920,1080);
+			frameRate(30);
+			bg = loadImage("Circuit_Board.png");
+			background(bg);
+		}
+
+		void draw(){
+			background(bg);
+			exit();
+		}
+	</script>
+</html>

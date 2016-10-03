@@ -1,0 +1,13 @@
+a.box {
+ display:block;
+ width: 100px;
+ height: 100px;
+ background: #00f; /* blue */
+ border: 1px solid #000;
+}
+a.box:hover {
+ background: #f00;
+}
+a.box {
+ -webkit-transition: all 5s linear;
+}

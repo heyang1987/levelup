@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset = "UTF-8">
+	<title>Level Up</title>
+	<style>
+		html, body{
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+	<link rel="stylesheet" href="styles/main.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script>
+
+
+
+//** Usage: Instantiate script by calling: var uniquevar=createsoundbite("soundfile1", "fallbackfile2", "fallebacksound3", etc)
+//** Call: uniquevar.playclip() to play sound
+
+var html5_audiotypes={ //define list of audio file extensions and their associated audio types. Add to it if your specified audio file isn't on this list:
+	"mp3": "audio/mpeg",
+	"mp4": "audio/mp4",
+	"ogg": "audio/ogg",
+	"wav": "audio/wav"
+}
+
+function createsoundbite(sound){
+	var html5audio=document.createElement('audio')
+	if (html5audio.canPlayType){ //check support for HTML5 audio
+		for (var i=0; i<arguments.length; i++){
+			var sourceel=document.createElement('source')
+			sourceel.setAttribute('src', arguments[i])
+			if (arguments[i].match(/\.(\w+)$/i))
+				sourceel.setAttribute('type', html5_audiotypes[RegExp.$1])
+			html5audio.appendChild(sourceel)
+		}
+		html5audio.load()
+		html5audio.playclip=function(){
+			html5audio.pause()
+			html5audio.currentTime=0
+			html5audio.play()
+		}
+		return html5audio
+	}
+	else{
+		return {playclip:function(){throw new Error("Your browser doesn't support HTML5 audio unfortunately")}}
+	}
+}
+
+//Initialize two sound clips with 1 fallback file each:
+
+var mouseoversound=createsoundbite("whistle.ogg", "whistle.mp3")
+var clicksound=createsoundbite("click.ogg", "click.mp3")
+var polygonsound = createsoundbite("tech_rollover_2.mp3")
+
+</script>
+</head>
+<body>
+<div id="title">
+	<h1>Level 1</h1>
+<style>
+	#title {
+		position: absolute;
+		left: 150px;
+		top: 0px;
+		font-family : tahoma;
+		font-size : 50px;
+		line-height: 90px;
+		margin: 0;
+		text-align : center;
+		text-shadow: #000 3px 3px, #000 2px 2px, #000 3px 3px;
+		color : #FF8500;	
+	}	
+</style>
+</div>
+<div id="sparkInput" style="position: absolute; left: 878px; top: 100px; display: none"><img src="styles/spark.gif"/></div>
+<div id="sparkA" style="position: absolute; left: 645px; top: 350px; display: none"><img src="styles/spark.gif"/></div>
+<div id="sparkB" style="position: absolute; left: 800px; top: 350px; display: none"><img src="styles/spark.gif"/></div>
+<div id="sparkC" style="position: absolute; left: 955px; top: 350px; display: none"><img src="styles/spark.gif"/></div>
+<div id="sparkD" style="position: absolute; left: 1117px; top: 350px; display: none"><img src="styles/spark.gif"/></div>
+
+<!-- This codes for toolbar at the top of the page -->
+<div id="rectangle" style="position: absolute; left: 1506px; top: 0px;";>
+&nbsp;&nbsp;
+<a href="index.html" class="button menu"<button>Menu</button></a>
+<a href="#" class="button menu"<button>Levels</button></a>
+<a href="JavaScript:newPopup('how-to.html');" class="button menu">How-To</a>
+<a href="index.html" class="button menu">Exit</a><br>
+<style>
+	#rectangle {
+		width: 410px;
+		height: 40px;
+		background: rgba(180, 255, 0, 0.88);
+		border-radius: 0px 0px 12px 0px; 
+		-moz-border-radius: 0px 0px 12px 0px; 
+		-webkit-border-radius: 0px 0px 12px 0px;
+		border: 2px ridge #5ddcdd;
+	}	
+</style>
+</div>
+
+<!--Code for the polygons-->
+<div id="A" class="RegUnclickable" style="position: absolute; left: 628px; top: 280px;">
+	<img  src="graphics/lvl1_A_glow.png" onClick="add_A_To_Code()" onmouseover="polygonsound.playclip()">
+	<div style="position: absolute; left:10px; top: 50px;">
+	<textarea readonly name = "a" id="registerA" placeholder="" onfocus="add_A_To_Code()"></textarea>
+	<style>
+		#registerA {
+			width: 100px;
+			height: 30px; 
+			resize: none;
+			border: none;
+			text-align: center;
+			background: white;  
+			outline: none;
+			background: rgba(0, 0, 0, 0);
+			font-size: 18px;
+			font-weight: bold;
+			color: rgb(255,162,86);
+		}
+	</style>
+	</div>
+</div>
+		
+<div id="B" class="RegUnclickable" style="position: absolute; left: 787px; top: 280px;">
+	<img  src="graphics/lvl1_B_glow.png" onClick="add_B_To_Code()" onmouseover="polygonsound.playclip()">
+	<div style="position: absolute; left:10px; top: 50px;">
+	<textarea readonly name = "b" id="registerB" placeholder="" onfocus="add_B_To_Code()"></textarea>
+	<style>
+		#registerB {
+			width: 100px;
+			height: 30px; 
+			resize: none;
+			border: none;
+			text-align: center;
+			background: white;  
+			outline: none;
+			background: rgba(0, 0, 0, 0);
+			font-size: 18px;
+			font-weight: bold;
+			color: rgb(255,162,86);
+		}
+	</style>
+	</div>
+</div>
+			
+<div id="C" class="RegUnclickable"  style="position: absolute; left: 941px; top: 280px;">
+	<img  src="graphics/lvl1_C_glow.png" onClick="add_C_To_Code()" onmouseover="polygonsound.playclip()">
+	<div style="position: absolute; left:10px; top: 50px;">
+	<textarea readonly name = "c" id="registerC" placeholder="" onfocus="add_C_To_Code()"></textarea>
+	<style>
+		#registerC {
+			width: 100px;
+			height: 30px; 
+			resize: none;
+			border: none;
+			text-align: center;
+			background: white;  
+			outline: none;
+			background: rgba(0, 0, 0, 0);
+			font-size: 18px;
+			font-weight: bold;
+			color: rgb(255,162,86);
+		}
+	</style>
+	</div>
+</div>
+				
+<div id="D" class="RegUnclickable" style="position: absolute; left: 1098px; top: 280px;">
+	<img  src="graphics/lvl1_D_glow.png" onClick="add_D_To_Code()" onmouseover="polygonsound.playclip()">
+	<div style="position: absolute; left:10px; top: 50px;">
+	<textarea readonly name = "d" id="registerD" placeholder="" onfocus="add_D_To_Code()"></textarea>
+	<style>
+		#registerD {
+			width: 100px;
+			height: 30px; 
+			resize: none;
+			border: none;
+			text-align: center;
+			background: white;  
+			outline: none;
+			background: rgba(0, 0, 0, 0);
+			font-size: 18px;
+			font-weight: bold;
+			color: rgb(255,162,86);
+		}
+	</style>
+	</div>
+</div>
+<script>
+function add_A_To_Code() {
+	clicksound.playclip();
+	var obj=document.getElementById("code");
+	obj.value += "A";
+	document.getElementById("A").className  = 'RegUnclickable';
+	document.getElementById("B").className  = 'RegUnclickable';
+	document.getElementById("C").className  = 'RegUnclickable';
+	document.getElementById("D").className  = 'RegUnclickable';
+	document.getElementById("status").innerHTML = "";
+	document.getElementById("inputButton").style.pointerEvents = "auto";
+	document.getElementById("outputButton").style.pointerEvents = "auto";
+	document.getElementById("assignmentButton").style.pointerEvents = "auto";
+	document.getElementById("ifButton").style.pointerEvents = "auto";
+	document.getElementById("whileButton").style.pointerEvents = "auto";
+}
+
+function add_B_To_Code() {
+	clicksound.playclip();
+	var obj=document.getElementById("code");
+	obj.value += "B";
+	document.getElementById("A").className  = 'RegUnclickable';
+	document.getElementById("B").className  = 'RegUnclickable';
+	document.getElementById("C").className  = 'RegUnclickable';
+	document.getElementById("D").className  = 'RegUnclickable';
+	document.getElementById("status").innerHTML = "";
+	document.getElementById("inputButton").style.pointerEvents = "auto";
+	document.getElementById("outputButton").style.pointerEvents = "auto";
+	document.getElementById("assignmentButton").style.pointerEvents = "auto";
+	document.getElementById("ifButton").style.pointerEvents = "auto";
+	document.getElementById("whileButton").style.pointerEvents = "auto";
+}
+
+function add_C_To_Code() {
+	clicksound.playclip();
+	var obj=document.getElementById("code");
+	obj.value += "C";
+	document.getElementById("A").className  = 'RegUnclickable';
+	document.getElementById("B").className  = 'RegUnclickable';
+	document.getElementById("C").className  = 'RegUnclickable';
+	document.getElementById("D").className  = 'RegUnclickable';
+	document.getElementById("status").innerHTML = "";
+	document.getElementById("inputButton").style.pointerEvents = "auto";
+	document.getElementById("outputButton").style.pointerEvents = "auto";
+	document.getElementById("assignmentButton").style.pointerEvents = "auto";
+	document.getElementById("ifButton").style.pointerEvents = "auto";
+	document.getElementById("whileButton").style.pointerEvents = "auto";
+}
+
+function add_D_To_Code() {
+	clicksound.playclip();
+	var obj=document.getElementById("code");
+	obj.value += "D";
+	document.getElementById("A").className  = 'RegUnclickable';
+	document.getElementById("B").className  = 'RegUnclickable';
+	document.getElementById("C").className  = 'RegUnclickable';
+	document.getElementById("D").className  = 'RegUnclickable';
+	document.getElementById("status").innerHTML = "";
+	document.getElementById("inputButton").style.pointerEvents = "auto";
+	document.getElementById("outputButton").style.pointerEvents = "auto";
+	document.getElementById("assignmentButton").style.pointerEvents = "auto";
+	document.getElementById("ifButton").style.pointerEvents = "auto";
+	document.getElementById("whileButton").style.pointerEvents = "auto";
+}
+</script>
+
+<!-- This codes for the instruction status box on the top left side of the page -->
+<div id="statusBar" style="position: absolute; left: 95px; top: 170px; padding: 10px;">
+<font color="white" face="cicle" font size="5">
+Status:</font><br>
+<textarea readonly id="status"></textarea>
+<style>
+	#status {
+		width: 410px; 
+		height: 50px;
+		max-height: 275px; 
+		resize:none;
+		background: rgba(0, 0, 0, 0.5);	
+		border-radius: 5px 5px 5px 5px;  
+		border: 4px groove rgba(255,176,10,0.5);
+		outline: none;
+		font-size: 22px;
+		color: rgb(255,0,0);
+	}
+</style>
+</div>
+
+<!-- This codes for the instruction buttons box on the top left side of the page -->
+<div id="InstructionBox" style="position: absolute; left: 105px; top: 290px; padding: 10px;">
+<style>
+	#InstructionBox {
+		width: 395px;
+		height: 170px;
+		background: rgba(0, 0, 0, 0);
+		border-radius: 5px 5px 5px 5px;  
+		border: 4px groove rgba(84,176,246,0.5);
+		outline: none;
+		font-size: 22px;
+		color: rgb(86,181,255);
+	}	
+</style>
+&nbsp;&nbsp;&nbsp;<button id="inputButton", class= "button instruction", onclick="inputButtonClicked()", onmouseover="mouseoversound.playclip()">input</button></br>
+&nbsp;&nbsp;&nbsp;<button id="outputButton", class= "button instruction", onclick="outputButtonClicked()", onmouseover="mouseoversound.playclip()">output</button></br>
+&nbsp;&nbsp;&nbsp;<button id="assignmentButton", class= "button instruction", onclick="assignmentButtonClicked()", onmouseover="mouseoversound.playclip()">assignment</button></br>
+&nbsp;&nbsp;&nbsp;<button id="ifButton", class= "button instruction", onclick="ifButtonClicked()", onmouseover="mouseoversound.playclip()">if</button></br>
+&nbsp;&nbsp;&nbsp;<button id="whileButton", class= "button instruction" onclick="whileButtonClicked()", onmouseover="mouseoversound.playclip()">while</button></br>
+</div>
+<script>
+function inputButtonClicked() {
+	var obj=document.getElementById("code");
+	clicksound.playclip();
+	if (obj.value != '') {
+		obj.value += "\ninput ";
+	}
+	else
+		obj.value = "input ";
+	document.getElementById("status").innerHTML = "Choose A INPUT Register";
+	document.getElementById("A").className  = 'RegClickable';
+	document.getElementById("B").className  = 'RegClickable';
+	document.getElementById("C").className  = 'RegClickable';
+	document.getElementById("D").className  = 'RegClickable';
+	document.getElementById("inputButton").style.pointerEvents = "none";
+	document.getElementById("outputButton").style.pointerEvents = "none";
+	document.getElementById("assignmentButton").style.pointerEvents = "none";
+	document.getElementById("ifButton").style.pointerEvents = "none";
+	document.getElementById("whileButton").style.pointerEvents = "none";
+}
+
+function outputButtonClicked() {
+	var obj=document.getElementById("code");
+	clicksound.playclip();
+	if (obj.value != '') {
+		obj.value += "\noutput ";
+	}
+	else
+		obj.value = "output ";
+	document.getElementById("status").innerHTML = "Choose A OUTPUT Register";
+	document.getElementById("A").className  = 'RegClickable';
+	document.getElementById("B").className  = 'RegClickable';
+	document.getElementById("C").className  = 'RegClickable';
+	document.getElementById("D").className  = 'RegClickable';
+	document.getElementById("inputButton").style.pointerEvents = "none";
+	document.getElementById("outputButton").style.pointerEvents = "none";
+	document.getElementById("assignmentButton").style.pointerEvents = "none";
+	document.getElementById("ifButton").style.pointerEvents = "none";
+	document.getElementById("whileButton").style.pointerEvents = "none";
+}
+
+function assignmentButtonClicked() {
+	var obj=document.getElementById("code");
+	clicksound.playclip();
+	if (obj.value != '') {
+		obj.value += "\n";
+	}
+	document.getElementById("status").innerHTML = "Choose The Left Register";
+	document.getElementById("A").className  = 'RegClickable';
+	document.getElementById("B").className  = 'RegClickable';
+	document.getElementById("C").className  = 'RegClickable';
+	document.getElementById("D").className  = 'RegClickable';
+	document.getElementById("inputButton").style.pointerEvents = "none";
+	document.getElementById("outputButton").style.pointerEvents = "none";
+	document.getElementById("assignmentButton").style.pointerEvents = "none";
+	document.getElementById("ifButton").style.pointerEvents = "none";
+	document.getElementById("whileButton").style.pointerEvents = "none";
+	obj.focus();
+}
+
+function ifButtonClicked() {
+	var obj=document.getElementById("code");
+	clicksound.playclip();
+	document.getElementById("status").innerHTML = "Write An if Expression";
+	obj.value += "if (){\n\n}\n";
+	obj.focus();
+}
+
+function whileButtonClicked() {
+	var obj=document.getElementById("code");
+	clicksound.playclip();
+	document.getElementById("status").innerHTML = "Write An While Expression";
+	obj.value += "while (){\n\n}\n";
+	obj.focus();
+}
+</script>
+
+
+<!-- This codes for the code textbox on the bottom left side of the page -->
+<div id="codeDiv" style="position: absolute; left: 95px; top: 500px; padding: 10px;">
+<font color="white" face="cicle" font size="5">
+Program:</font><br>
+<textarea id="code" rows="20" cols="50">
+input A
+output A</textarea>
+<style>
+	#code {
+		width: 410px; 
+		height: 275px;
+		max-height: 275px; 
+		resize:none;
+		background: rgba(0, 0, 0, 0.5);	
+		border-radius: 5px 5px 5px 5px;  
+		border: 4px groove rgba(84,176,246,0.5);
+		outline: none;
+		font-size: 22px;
+		color: rgb(86,181,255);
+	}
+</style>
+</div>
+
+<!-- code for run and clear buttons -->
+<div style="position: absolute; left: 95px; top: 830px; padding: 10px;">
+<button id="calculate" class= "button yellow">Run</button>
+<button id="clear" class= "button yellow">Clear</button>
+</div>
+<script>
+	if (!Object.create) {
+		Object.create = function (o) {
+			function F() { }
+			F.prototype = o;
+			return new F();
+		};
+	}
+</script>
+<!--<script src="lexer.js"></script> -->
+<script src="parser.js"></script>
+<script src="evaluator.js"></script>
+<script>
+	var tokens = [], c, i = 0;
+	var addToken = function (type, value) {
+		tokens.push({
+			type: type,
+			value: value
+		});
+	};
+	var preIdnToken = "";
+	var lex = function (input) {
+		//alert("LEXING: "+input);
+		var isOperator = function (c) { return /[+\-*\/\^%=(),]/.test(c); },
+			isDigit = function (c) { return /[0-9]/.test(c); },
+			isWhiteSpace = function (c) { return /\s/.test(c); },
+			isIdentifier = function (c) { return typeof c === "string" && !isOperator(c) && !isDigit(c) && !isWhiteSpace(c); };
+
+		c, i = 0;
+		var advance = function () { return c = input[++i]; };
+
+		while (i < input.length) {
+			c = input[i];
+			if (isWhiteSpace(c)) advance();
+			else if (isOperator(c)) {
+				addToken(c);
+				advance();
+			}
+			else if (isDigit(c)) {
+				var num = c;
+				while (isDigit(advance())) num += c;
+				if (c === ".") {
+					do num += c; while (isDigit(advance()));
+				}
+				num = parseFloat(num);
+				if (!isFinite(num)) throw "Number is too large or too small for a 64-bit double.";
+				addToken("number", num);
+			}
+			else if (isIdentifier(c)) {
+				var idn = c;
+				while (isIdentifier(advance())) {
+					idn += c;
+				}
+				if (preIdnToken == "input") {
+					document.getElementById("sparkInput").style.display = "block";
+					if (idn == "A"){
+						var value = prompt("Please give register A a value (must be a number)\nA = ");
+						$(document).ready(function(){
+							//$("#sparkInput").css({'display':'block'});
+							$("#sparkInput").animate({top: '170px'}, "slow");
+							$("#sparkInput").animate({left: '646px'}, "slow");
+							$("#sparkInput").animate({top: '240px'}, "slow", function(){
+								$(this).css({'left':'878px','top':'100px','display':'block'});
+								document.getElementById("registerA").value = value;
+							});
+						});
+					}
+					else if (idn == "B"){
+						var value = prompt("Please give register B a value (must be a number)\nB = ");
+						$(document).ready(function(){
+							//document.getElementById("sparkInput").style.display="block";
+							$("#sparkInput").animate({top: '170px'}, "slow");
+							$("#sparkInput").animate({left: '800px'}, "slow");
+							$("#sparkInput").animate({top: '240px'}, "slow", function(){
+								$(this).css({'left':'878px','top':'100px','display':'block'});
+								document.getElementById("registerB").value = value;
+							});
+						});
+					}
+					else if (idn == "C"){
+						var value = prompt("Please give register C a value (must be a number)\nC = ");
+						$(document).ready(function(){
+							//$("#sparkInput").css({'display':'block'});
+							$("#sparkInput").animate({top: '170px'}, "slow");
+							$("#sparkInput").animate({left: '957px'}, "slow");
+							$("#sparkInput").animate({top: '240px'}, "slow", function(){
+								$(this).css({'left':'878px','top':'100px','display':'block'});
+								document.getElementById("registerC").value = value;
+							});
+						});
+					}
+					else if (idn == "D"){
+						var value = prompt("Please give register D a value (must be a number)\nD = ");
+						$(document).ready(function(){
+							//$("#sparkInput").css({'display':'block'});
+							$("#sparkInput").animate({top: '170px'}, "slow");
+							$("#sparkInput").animate({left: '1113px'}, "slow");
+							$("#sparkInput").animate({top: '240px'}, "slow", function(){
+								$(this).css({'left':'878px','top':'100px','display':'block'});
+								document.getElementById("registerD").value = value;
+							});
+						});
+					}
+					else throw "Not a valida register name"; 
+					preIdnToken = "";
+					addToken("identifier", idn);
+					addToken("=");
+					addToken("number", value);
+					break;
+				}
+				else if (idn != "input" && idn != "output"){
+					addToken("identifier", idn);
+				}
+				preIdnToken = idn;
+			}
+			else throw "Unrecognized token.";
+		}
+		//addToken("(end)");
+		//return tokens;
+	};
+	
+	var addEndToken = function () {
+		addToken("(end)");
+	}
+	
+	document.getElementById('calculate').addEventListener('click', calculate);
+	document.getElementById('clear').addEventListener('click', clear);
+	var codeBlock = document.getElementById('code');
+	
+	function clear() {
+		clicksound.playclip();
+		document.getElementById("code").value="";
+		document.getElementById("output").innerHTML="";
+	}
+
+	function calculate() {
+		clicksound.playclip();
+		var arrayOfCode = codeBlock.value.split('\n');
+		tokens = [];
+		var i = 0;
+		try {
+			while(i<arrayOfCode.length) {
+				lex(arrayOfCode[i]);
+				i++;
+			}
+			addEndToken();
+			var parseTree = parse(tokens);
+			var output = evaluate(parseTree);
+			//alert("output is: "+output);
+			document.getElementById("output").innerHTML = output;
+		}
+		catch(err) {
+			document.getElementById("output").innerHTML = err;
+		}		
+	}
+</script>
+
+<!-- This codes for the background of the Register input textbox on the left side of the page -->
+<div id="inputArea"style= "position: absolute; left: 670px; top: 450px; padding: 10px; display: none" class="headers">
+<font color="white" face="cicle" font size="6">
+INPUT:</font><br>
+<input id="promptAnswer" type="text" style="width: 410px; height: 30px;
+	resize:none; background: rgba(0, 0, 0, 0.5); 
+	font-size:28px; color: rgb(59, 150, 225);">
+<input id="promptButton" type="submit" value="Enter" class= "button yellow">
+<script>
+document.getElementById('promptButton').addEventListener('click', submitPrompt);
+function submitPrompt() {
+	var answer = promptAnswer.value; // Get the answer
+
+}
+</script>
+</form>
+</div>
+
+<!-- This codes for the OUTPUT textbox on the bottom right side of the page -->
+<div id="outputArea" style="position: absolute; left: 670px; top: 500px; padding: 10px; display: auto">
+<font color="white" face="cicle" font size="5">
+OUTPUT:</font><br>
+<textarea readonly id="output"></textarea>
+<style>
+	#output {
+		width: 510px; 
+		height: 275px;
+		max-height: 275px; 
+		resize:none;
+		background: rgba(0, 0, 0, 0.5);	
+		border-radius: 5px 5px 5px 5px;  
+		border: 4px groove rgba(169, 77, 248, 0.6);
+		outline: none;
+		font-size: 22px;
+		color: rgb(169, 77, 248);
+	}
+</style>
+</div>
+
+<!-- background -->
+<body style = "background: url(backgrounds/background.gif) no-repeat center center fixed; -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;"> 
+</style>
+
+</body>
+</html>

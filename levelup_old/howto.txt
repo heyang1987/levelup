@@ -1,0 +1,16 @@
+
+Screenshots of aspects of the interface that might be confusing.
+The screenshots improve the visual aspect of learning.
+Associate an actual image of terminal with the input/output
+box to help explain the functionality.
+
+Let's call a, b, c, d Memory Locations.
+
+The wires illustrate the flow of data in the computer
+during execution of the code.
+
+How to describe a code box to a non-programmer.
+
+Wrapped text explaining the screenshot.
+
+
